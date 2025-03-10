@@ -32,9 +32,9 @@ def combine_relations(relations):
     return set(reduce(lambda x,y: x | y,relations, base ))
 
 
-def continous_spaces(str_arr):
-    holes = [(i,j) for i in range(len(str_arr)) for j in range(len(str_arr[0])) if str_arr[i][j] == '0']
-    relations = create_relations(holes)
+def continuous_spaces(str_arr):
+    zeros = [(i,j) for i in range(len(str_arr)) for j in range(len(str_arr[0])) if str_arr[i][j] == '0']
+    relations = create_relations(zeros)
     groups = [relations[0]]
     for relation in relations:
         filtered_groups, indexes = filter_groups(relation, groups) 
