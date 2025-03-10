@@ -1,5 +1,3 @@
-arr = ['000','110', '010']
-
 def analize(current_hole, next_hole):
     ci, cj = current_hole
 
@@ -46,18 +44,13 @@ def recursive_visit(item, prev,string_arr, groups):
         recursive_visit((position[0] , position[1] + 1), item, string_arr, groups)
         recursive_visit((position[0] , position[1] - 1), item, string_arr, groups)
 
-
-
-
 def walk_matrix(string_arr):
     groups = []
     for row in range(len(string_arr)):
         for column in range(len(string_arr[0])):
             recursive_visit((row, column),(-1,-1), string_arr, groups)
 
-    print(groups)
-    print(len(groups))
+    return len(groups)
 
 
 
-walk_matrix(arr)
